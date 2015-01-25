@@ -5,6 +5,14 @@
 
 
 
+
+
+
+
+
+
+
+
 import java.awt.*;
 import java.util.*;
 import java.util.Timer;
@@ -24,10 +32,10 @@ public class CatDaddy extends TimerTask {
     public static double left_wheel_weighting = 1.0;
     public static double right_wheel_weighting = 0.5;
 
-    public static int left_mapping = VK_A;
-    public static int right_mapping = VK_D;
-    public static int up_mapping = VK_W;
-    public static int down_mapping = VK_S;
+    public static int left_mapping = VK_LEFT;
+    public static int right_mapping = VK_RIGHT;
+    public static int up_mapping = VK_UP;
+    public static int down_mapping = VK_DOWN;
     public static Point centerPoint;
 
     public static HashMap<Integer, Double> keyQueueMap;
@@ -149,11 +157,11 @@ public class CatDaddy extends TimerTask {
 
         if(right_wheel_speed > 1 && left_wheel_speed > 1) { // forward
             sum_dy += -Math.min(right_wheel_speed, left_wheel_speed); // mouse up
-            sum_dx += 0.0 * (right_wheel_speed - left_wheel_speed); // turn right/left
+            sum_dx += 0.4 * (right_wheel_speed - left_wheel_speed); // turn right/left
         }
         if(right_wheel_speed < -1 && left_wheel_speed < -1) { // back
             sum_dy += -Math.max(right_wheel_speed, left_wheel_speed); // mouse down
-            sum_dx += 0.0 * (right_wheel_speed - left_wheel_speed);
+            sum_dx += 0.4 * (right_wheel_speed - left_wheel_speed);
         }
         if(right_wheel_speed > 1 && left_wheel_speed < -1) { // turn left
             sum_dx += -Math.min(right_wheel_speed, -left_wheel_speed); // mouse left
@@ -165,9 +173,9 @@ public class CatDaddy extends TimerTask {
             sum_dy += Math.abs(right_wheel_speed) - Math.abs(left_wheel_speed);
         }
 
-        if(Math.abs(sum_dy) > 10) sum_dx *= 0.25;
+         if(Math.abs(sum_dy) > 10) sum_dx *= 0.25;
 
-        System.out.print("lwheel: " + left_wheel_speed + "   \trightwheel: " + right_wheel_speed);
+         System.out.print("lwheel: " + left_wheel_speed + "   \trightwheel: " + right_wheel_speed);
         sum_dy += Math.abs(right_wheel_speed) - Math.abs(left_wheel_speed);
         System.out.println("   \tdx: " + sum_dx + " \tdy: " + sum_dy);
 
