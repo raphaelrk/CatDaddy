@@ -112,66 +112,66 @@ public class CatDaddy extends TimerTask {
             for (GraphicsConfiguration config: configurations) {
                 Rectangle bounds = config.getBounds();
                 if(bounds.contains(p)) {
-                    // Set point to screen coordinates.
-                    Point b = bounds.getLocation();
-                    Point s = new Point(p.x - b.x, p.y - b.y);
+                     // Set point to screen coordinates.
+                     Point b = bounds.getLocation();
+                     Point s = new Point(p.x - b.x, p.y - b.y);
 
-                    try {
-                        Robot r = new Robot(device);
-                        r.mouseMove(s.x, s.y);
-                    } catch (AWTException e) {
-                        e.printStackTrace();
-                    }
+                     try {
+                         Robot r = new Robot(device);
+                         r.mouseMove(s.x, s.y);
+                     } catch (AWTException e) {
+                         e.printStackTrace();
+                     }
 
-                    return;
-                }
-            }
-        }
-        // Couldn't move to the point, it may be off screen.
-        return;
-    }
+                     return;
+                 }
+             }
+         }
+         // Couldn't move to the point, it may be off screen.
+         return;
+     }
 
-    public static void addKeys(int dx, int dy) {
+     public static void addKeys(int dx, int dy) {
 
-        int left_wheel_speed = 0;
-        int right_wheel_speed = 0;
+         int left_wheel_speed = 0;
+         int right_wheel_speed = 0;
 
-        if(left_wheel_forward_direction == UP) left_wheel_speed = -dy;
-        else if(left_wheel_forward_direction == DOWN) left_wheel_speed = dy;
-        else if(left_wheel_forward_direction == LEFT) left_wheel_speed = -dx;
-        else if(left_wheel_forward_direction == RIGHT) left_wheel_speed = dx;
+         if(left_wheel_forward_direction == UP) left_wheel_speed = -dy;
+         else if(left_wheel_forward_direction == DOWN) left_wheel_speed = dy;
+         else if(left_wheel_forward_direction == LEFT) left_wheel_speed = -dx;
+         else if(left_wheel_forward_direction == RIGHT) left_wheel_speed = dx;
 
-        if(right_wheel_forward_direction == UP) right_wheel_speed = -dy;
-        else if(right_wheel_forward_direction == DOWN) right_wheel_speed = dy;
-        else if(right_wheel_forward_direction == LEFT) right_wheel_speed = -dx;
-        else if(right_wheel_forward_direction == RIGHT) right_wheel_speed = dx;
+         if(right_wheel_forward_direction == UP) right_wheel_speed = -dy;
+         else if(right_wheel_forward_direction == DOWN) right_wheel_speed = dy;
+         else if(right_wheel_forward_direction == LEFT) right_wheel_speed = -dx;
+         else if(right_wheel_forward_direction == RIGHT) right_wheel_speed = dx;
 
-        left_wheel_speed *= left_wheel_weighting;
-        right_wheel_speed *= right_wheel_weighting;
+         left_wheel_speed *= left_wheel_weighting;
+         right_wheel_speed *= right_wheel_weighting;
 
-        // vectors! moving the wheels forward adds a vector going forward and towards the middle
-        //          moving the wheels backward adds a vector going backward and away from the middle
+         // vectors! moving the wheels forward adds a vector going forward and towards the middle
+         //          moving the wheels backward adds a vector going backward and away from the middle
 
-        int sum_dx = 0;
-        int sum_dy = 0; // dy > 0 = down
+         int sum_dx = 0;
+         int sum_dy = 0; // dy > 0 = down
 
         if(right_wheel_speed > 1 && left_wheel_speed > 1) { // forward
-            sum_dy += -Math.min(right_wheel_speed, left_wheel_speed); // mouse up
-            sum_dx += 0.4 * (right_wheel_speed - left_wheel_speed); // turn right/left
-        }
-        if(right_wheel_speed < -1 && left_wheel_speed < -1) { // back
-            sum_dy += -Math.max(right_wheel_speed, left_wheel_speed); // mouse down
-            sum_dx += 0.4 * (right_wheel_speed - left_wheel_speed);
-        }
-        if(right_wheel_speed > 1 && left_wheel_speed < -1) { // turn left
-            sum_dx += -Math.min(right_wheel_speed, -left_wheel_speed); // mouse left
-            sum_dy += Math.abs(left_wheel_speed) - Math.abs(right_wheel_speed);
+             sum_dy += -Math.min(right_wheel_speed, left_wheel_speed); // mouse up
+             sum_dx += 0.4 * (right_wheel_speed - left_wheel_speed); // turn right/left
+         }
+         if(right_wheel_speed < -1 && left_wheel_speed < -1) { // back
+             sum_dy += -Math.max(right_wheel_speed, left_wheel_speed); // mouse down
+             sum_dx += 0.4 * (right_wheel_speed - left_wheel_speed);
+         }
+         if(right_wheel_speed > 1 && left_wheel_speed < -1) { // turn left
+             sum_dx += -Math.min(right_wheel_speed, -left_wheel_speed); // mouse left
+             sum_dy += Math.abs(left_wheel_speed) - Math.abs(right_wheel_speed);
 
-        }
-        if(right_wheel_speed < -1 && left_wheel_speed > 1) { // turn right
-            sum_dx += Math.min(-right_wheel_speed, left_wheel_speed); // mouse right
-            sum_dy += Math.abs(right_wheel_speed) - Math.abs(left_wheel_speed);
-        }
+         }
+         if(right_wheel_speed < -1 && left_wheel_speed > 1) { // turn right
+              sum_dx += Math.min(-right_wheel_speed, left_wheel_speed); // mouse right
+              sum_dy += Math.abs(right_wheel_speed) - Math.abs(left_wheel_speed);
+          }
 
          if(Math.abs(sum_dy) > 10) sum_dx *= 0.25;
 

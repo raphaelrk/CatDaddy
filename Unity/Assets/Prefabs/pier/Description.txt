@@ -1,0 +1,13 @@
+Description
+===========
+
+This model provides reusable components for
+compsing a pier. Mainly these are:
+- Masonery blocks for extending a pier into
+  one or two directions
+- Poles to support the pier
+- Pier with wide and narrow support beams,
+  so they are "pluggable"
+  
+The texture images used were partially provided
+by Doug Turner.

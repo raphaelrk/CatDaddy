@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 4295fa26b90804fb28dc02fefa4ef45c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: balcony
+    100002: barrels
+    100004: boards
+    100006: boards_support
+    100008: chimneys
+    100010: cover_window
+    100012: //RootNode
+    100014: doors
+    100016: foundation
+    100018: gutters
+    100020: parapets
+    100022: roof
+    100024: roof_MeshPart0
+    100026: roof_MeshPart1
+    100028: roof_MeshPart2
+    100030: roof_support
+    100032: terrace
+    100034: walls
+    100036: window_roof
+    100038: windows
+    400000: balcony
+    400002: barrels
+    400004: boards
+    400006: boards_support
+    400008: chimneys
+    400010: cover_window
+    400012: //RootNode
+    400014: doors
+    400016: foundation
+    400018: gutters
+    400020: parapets
+    400022: roof
+    400024: roof_MeshPart0
+    400026: roof_MeshPart1
+    400028: roof_MeshPart2
+    400030: roof_support
+    400032: terrace
+    400034: walls
+    400036: window_roof
+    400038: windows
+    2300000: balcony
+    2300002: barrels
+    2300004: boards
+    2300006: boards_support
+    2300008: chimneys
+    2300010: cover_window
+    2300012: doors
+    2300014: foundation
+    2300016: gutters
+    2300018: parapets
+    2300020: roof_MeshPart0
+    2300022: roof_MeshPart1
+    2300024: roof_MeshPart2
+    2300026: roof_support
+    2300028: terrace
+    2300030: walls
+    2300032: window_roof
+    2300034: windows
+    3300000: balcony
+    3300002: barrels
+    3300004: boards
+    3300006: boards_support
+    3300008: chimneys
+    3300010: cover_window
+    3300012: doors
+    3300014: foundation
+    3300016: gutters
+    3300018: parapets
+    3300020: roof_MeshPart0
+    3300022: roof_MeshPart1
+    3300024: roof_MeshPart2
+    3300026: roof_support
+    3300028: terrace
+    3300030: walls
+    3300032: window_roof
+    3300034: windows
+    4300000: roof_MeshPart0
+    4300002: roof_MeshPart1
+    4300004: roof_MeshPart2
+    4300006: gutters
+    4300008: barrels
+    4300010: balcony
+    4300012: cover_window
+    4300014: terrace
+    4300016: chimneys
+    4300018: boards_support
+    4300020: boards
+    4300022: roof_support
+    4300024: foundation
+    4300026: doors
+    4300028: parapets
+    4300030: windows
+    4300032: walls
+    4300034: window_roof
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
